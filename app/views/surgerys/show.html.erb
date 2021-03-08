@@ -1,0 +1,33 @@
+<h1>Surgey: <%= @surgery.title %></h1>
+<h2>Day of week: <%= @surgery.day_of_week %></h2>
+<h2>Room number: <%= @surgery.operating_room_number %></h2>
+
+<h1>Doctors</h1>
+<% @surgery.doctors.each do |doctor| %>
+  <section id="doctor-<%= doctor.id %>">
+    <ul>
+      <li>Name: <%= doctor.name %></li>
+      <li>Years Practiced: <%= doctor.years_practiced %></li>
+    </ul>
+  </section>
+<% end %>
+
+<h2>Least experienced doctor </h2>
+<section id='least_experienced'>
+  <p><%=@surgery.least.name%></p>
+  <p><%=@surgery.least.years_practiced%></p>
+</section>
+
+<h2>Most experienced doctor </h2>
+<section id='most_experienced'>
+  <p><%=@surgery.most.name%></p>
+  <p><%=@surgery.most.years_practiced%></p>
+</section>
+
+<h2>Add a Doctor</h2>
+<%= form_with url: surgery_surgery_doctors_path(@surgery), method: :post, local: true do |f| %>
+  <%= f.label :doctor_name %>
+  <%= f.text_field :doctor_name %>
+  <%= f.hidden_field :status, surgery_id: @surgery.id %>
+  <%= f.submit 'Submit' %>
+<% end %>
