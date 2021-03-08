@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :doctor do
-    name { "MyString" }
-    years_practiced { 1 }
-    university { "MyString" }
+    name {Faker::Name.first_name}
+    sequence(:years_practiced)  { |n| n }
+    university {Faker::Coffee.variety}
   end
 end

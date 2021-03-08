@@ -1,0 +1,11 @@
+<h1>Doctors</h1>
+
+<% @doctors.each do |doctor| %>
+  <section id="doctor-<%= doctor.id %>">
+    <ul>
+      <li>Name: <%= doctor.name %></li>
+      <li>Years Practiced: <%= doctor.years_practiced %></li>
+      <li>University Attended: <%= doctor.university %></li>
+    </ul>
+  </section>
+<% end %>

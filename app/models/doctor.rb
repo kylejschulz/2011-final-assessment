@@ -3,4 +3,8 @@ class Doctor < ApplicationRecord
 
   has_many :surgery_doctors
   has_many :surgerys, through: :surgery_doctors
+
+  def self.sort_practiced
+    order(years_practiced: :desc)
+  end
 end
