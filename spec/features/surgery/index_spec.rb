@@ -37,11 +37,11 @@ RSpec.describe 'As a visitor' do
 
     it "And next to each surgery I see the average years practiced of doctors performing that surgery" do
       within("#surgery-#{@surgery_1.id}") do
-        expect(page).to have_content(@surgery_1.average_years_practiced)
+        expect(page).to have_content(@surgery_1.average)
       end
 
       within("#surgery-#{@surgery_2.id}") do
-        expect(page).to have_content(@surgery_2.average_years_practiced)
+        expect(page).to have_content(@surgery_2.average)
       end
 
     end

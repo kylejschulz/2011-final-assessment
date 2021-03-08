@@ -1,11 +1,12 @@
 <h1>Surgerys</h1>
 
-<% @doctors.each do |doctor| %>
-  <section id="doctor-<%= doctor.id %>">
+<% @doctors.each do |surgery| %>
+  <section id="surgery-<%= surgery.id %>">
     <ul>
-      <li>Name: <%= doctor.name %></li>
-      <li>Years Practiced: <%= doctor.years_practiced %></li>
-      <li>University Attended: <%= doctor.university %></li>
+      <li>Title: <%= surgery.title %></li>
+      <li>Day of week: <%= surgery.day_of_week %></li>
+      <li>Operating room number: <%= surgery.operating_room_number %></li>
+      <li>Average years practiced: <%= surgery.average %></li>
     </ul>
   </section>
 <% end %>
